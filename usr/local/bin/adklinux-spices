@@ -1,0 +1,3 @@
+#!/bin/bash
+
+python3 /usr/share/adklinux-spices/adklinux-spices.py
