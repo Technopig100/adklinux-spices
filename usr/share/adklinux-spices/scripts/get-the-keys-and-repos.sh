@@ -2,23 +2,28 @@
 
 ######################################################################################################################
 
+echo "Letting pacman know ADK-Linux package keys"
+
+sudo pacman-key --recv-keys 0A74C5909A8A2600AD012AF67B22BF2F72D54DAC --keyserver hkps://keyserver.ubuntu.com
+sudo pacman-key --lsign-key 0A74C5909A8A2600AD012AF67B22BF2F72D54DAC
+
 sudo pacman -S wget --noconfirm --needed
 
-echo "Getting the Adklinux keys from the Adklinux repo"
+echo "Getting the ADK-Linux keys from the ADK-Linux repo"
 
-sudo wget https://github.com/adklinux/adklinux_repo/raw/master/x86_64/adklinux-keyring-20230919-6-any.pkg.tar.zst -O /tmp/adklinux-keyring-20230919-6-any.pkg.tar.zst
+sudo wget https://github.com/Technopig100/adk_repo/raw/main/x86_64/adklinux-keyring-20230919-6-any.pkg.tar.zst -O /tmp/adklinux-keyring-20230919-6-any.pkg.tar.zst
 sudo pacman -U --noconfirm --needed /tmp/adklinux-keyring-20230919-6-any.pkg.tar.zst
 
 ######################################################################################################################
 
-echo "Getting the latest Adklinux mirrors file"
+echo "Getting the latest adklinux mirrors file"
 
-sudo wget https://raw.githubusercontent.com/adklinux/adk-mirrorlist/master/etc/pacman.d/adk-mirrorlist -O /etc/pacman.d/adk-mirrorlist
+sudo wget https://raw.githubusercontent.com/Technopig100/adk-mirrorlist/main/etc/pacman.d/adk-mirrorlist -O /etc/pacman.d/adklinux-mirrorlist
 echo '
-#[adk_repo_testing]
-#SigLevel = Required DatabaseOptional
+#ADK Linux repository
+
+#[adklinux_test_repo]
 #Include = /etc/pacman.d/adk-mirrorlist
 
-[adk_repo]
-SigLevel = Required DatabaseOptional
-Include = /etc/pacman.d/adk-mirrorlist
+[adklinux_repo]
+Include = /etc/pacman.d/adk-mirrorlist' | sudo tee --append /etc/pacman.conf
