@@ -18,12 +18,12 @@ sudo pacman -U --noconfirm --needed /tmp/adklinux-keyring-20230919-6-any.pkg.tar
 
 echo "Getting the latest adklinux mirrors file"
 
-sudo wget https://raw.githubusercontent.com/Technopig100/adk-mirrorlist/main/etc/pacman.d/adk-mirrorlist -O /etc/pacman.d/adklinux-mirrorlist
+sudo wget https://raw.githubusercontent.com/Technopig100/adk-mirrorlist/main/etc/pacman.d/adklinux-mirrorlist -O /etc/pacman.d/adklinux-mirrorlist
 echo '
 #ADK Linux repository
 
 #[adklinux_test_repo]
-#Include = /etc/pacman.d/adk-mirrorlist
+#Include = /etc/pacman.d/adklinux-mirrorlist
 
 [adklinux_repo]
-Include = /etc/pacman.d/adk-mirrorlist' | sudo tee --append /etc/pacman.conf
+Include = /etc/pacman.d/adklinux-mirrorlist' | sudo tee --append /etc/pacman.conf
