@@ -1,10 +1,10 @@
 [Desktop Entry]
-Name=Adklinux Spices
-GenericName=Adklinux Spices Application
-X-GNOME-FullName=Adklinux Spices Application
-Comment=bring in all the spices from AdkLinux
+Name=Adk-linux Spices
+GenericName=Adk-linux Spices Application
+X-GNOME-FullName=Adk-linux Spices Application
+Comment=bring in all the spices from Adk-Linux
 Exec=/usr/local/bin/adklinux-spices
-Icon=adklinux-tweak-tool
+Icon=applications-featured.svg
 Terminal=false
 Type=Application
 Categories=GTK;GNOME;Utility;Settings;Security;X-GNOME-Settings-Panel;X-GNOME-SystemSettings;X-Unity-Settings-Panel;X-XFCE-SettingsDialog;X-XFCE-SystemSettings;

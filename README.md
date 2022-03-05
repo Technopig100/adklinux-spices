@@ -1,8 +1,8 @@
-# Adklinux Spices
+# Adk-linux Spices
 
 # Purpose
 
-- add Adklinux packages to Arch Linux
+- add Adk-linux packages to Arch Linux
 
 - add key to Arch Linux
 
@@ -12,10 +12,8 @@
 
 # Websites
 
-Information : https://adklinux.info
-
-Tutorials about adklinux iso (Xfce, and Plasma) : https://adklinux.com
+Information : https://github.com/Technopig100
 
 # Social Media
 
-Facebook : https://www.facebook.com/adklinuxd/
+Facebook : https://www.facebook.com/"Jacob Durant"/
