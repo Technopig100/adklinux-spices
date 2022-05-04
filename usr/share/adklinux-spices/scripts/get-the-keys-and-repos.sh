@@ -17,15 +17,26 @@ sudo pacman -S wget --noconfirm --needed
 echo "Getting the latest adklinux mirrors file"
 
 sudo wget https://raw.githubusercontent.com/Technopig100/adk-mirrorlist/main/etc/pacman.d/adklinux-mirrorlist -O /etc/pacman.d/adklinux-mirrorlist
-echo '
-#ADK Linux repository
 
-#[adklinux_test_repo]
-#Server = https://faireygitea2.duckdns.org/jacob/$repo/raw/branch/master/$arch/
+if grep -q adklinux_repo /etc/pacman.conf; then
 
-[adklinux_repo]
-Include = /etc/pacman.d/adklinux-mirrorlist' | sudo tee --append /etc/pacman.conf
+	echo "ADK-Linux repos are already in /etc/pacman.conf"
+
+else
+
+	echo '
+	#ADK Linux repository
+
+	#[adklinux_test_repo]
+	#Server = https://faireygitea2.duckdns.org/jacob/$repo/raw/branch/master/$arch/
+
+	[adklinux_repo]
+	Include = /etc/pacman.d/adklinux-mirrorlist' | sudo tee --append /etc/pacman.conf
+
+fi
 
 echo "Getting the ADK-Linux keys from the ADK-Linux repo"
 
 sudo pacman -Syy adklinux-keyring-git --noconfirm --needed
+
+echo "DONE - UPDATE NOW"
